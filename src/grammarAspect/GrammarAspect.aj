@@ -21,7 +21,6 @@ public aspect GrammarAspect {
 	}
 
 	public boolean Grammar.check(String toCheck) throws InterruptedException {
-		//Thread.sleep(2000);
 		if (toCheck.length() == 1)
 			return true;
 		else {
@@ -31,8 +30,6 @@ public aspect GrammarAspect {
 				String value = values.next();
 				
 				if (toCheck.contains(value)) {
-					//System.out.println("Before "+toCheck+" replacing "+value+" -> "+simplifiedRules.get(value));
-					//System.out.println(toCheck);
 					toCheck = toCheck.replace(value,
 							simplifiedRules.get(value));
 					atLeastOne = true;
