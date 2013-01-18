@@ -20,8 +20,8 @@ public aspect GrammarAspect {
 	}
 
 	public boolean Grammar.check(String toCheck) throws Exception {
-		//System.out.println(toCheck);
-		if (toCheck.length() == 1)
+		// System.out.println(toCheck);
+		if (toCheck.equalsIgnoreCase(getFinalState()))
 			return true;
 		else {
 			Iterator<String> values = simplifiedRules.keySet().iterator();
